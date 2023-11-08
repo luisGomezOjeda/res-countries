@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext,useRef,useEffect } from "react"
 import { StyledConfig, StyledContainer, StyledHeader, StyledRadio, StyledInput, StyledCheckbox } from "./styledHeader"
 import { ThemeContext } from "../../context/themeContext"
 import imgSoon from "../../../public/moon.png"
@@ -12,6 +12,14 @@ export const Header = () => {
   const {theme, handdleTheme} = useContext(ThemeContext)
   const {lan, handdleLan} = useContext(LanContext)
 
+  const refLangText = useRef(null)
+  const refThemeText = useRef(null)
+
+  useEffect(()=> {
+    if(refLangText.current) refLangText.current.translate = false
+    if(refThemeText.current) refThemeText.current.translate = false
+  },[])
+
   return (
     <StyledHeader>
         <StyledContainer>
@@ -20,7 +28,7 @@ export const Header = () => {
           </Link>
         
           <StyledConfig>
-            <form>
+            <form ref={refLangText}>
               <StyledInput type="radio" value="es" name="lan" id="es" onClick={handdleLan} checked = {lan === "es"} />
               <StyledRadio htmlFor="es">español</StyledRadio>
 
@@ -29,7 +37,7 @@ export const Header = () => {
             </form>
             <div>
               <StyledInput type="checkbox" id="theme" onClick={handdleTheme}/>
-              <StyledCheckbox htmlFor="theme"><img src={ theme == "Ligth" ? imgSoon : imgSun }/> <p> {theme === "Ligth"? "Dark" : "Ligth" } Mode</p></StyledCheckbox>
+              <StyledCheckbox ref={refThemeText} htmlFor="theme"><img src={ theme == "Ligth" ? imgSoon : imgSun }/> <p> {theme === "Ligth"? "Dark" : "Ligth" } Mode</p></StyledCheckbox>
             </div>
           </StyledConfig>
         </StyledContainer>

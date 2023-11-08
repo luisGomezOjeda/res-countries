@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useState,useContext, useEffect } from "react"
 import { SectionListCountries, StyledMessageError } from "./StyledListCountries"
 import CountriesContext from "../../context/countriesContext"
 import { helpSeparator } from "../../helpers/helpSeparator"
@@ -7,10 +7,12 @@ import { ThemeContext } from "../../context/themeContext"
 
 import imgErrorDark from "../../../public/error-dark.png"
 import imgErrorLight from "../../../public/error-while.png"
+import { CardsPlaceholder } from "../CardPlaceholder/CardPlaceholder"
 
 
 export const ListCountries = () => {
 
+   const [loading, setLoading] = useState(true)
    const { countries, fetchData, countriesData, setCountriesData, setCountry } = useContext(CountriesContext)
    const {theme} = useContext(ThemeContext)
 
@@ -18,6 +20,8 @@ export const ListCountries = () => {
 
    useEffect(() => { 
      fetchData(setCountriesData);
+     setLoading(false)
+     
    }, [countries]);
     
    const handdleClickFigure = (currentCountry) => {
@@ -31,6 +35,10 @@ export const ListCountries = () => {
    
     return (
     <SectionListCountries>
+        {
+          loading && <CardsPlaceholder/>
+          
+        }
         {
             !countriesData.errorTrue && countriesData.map((country,index) => 
             <figure key={index} onClick={() => handdleClickFigure(country)}>

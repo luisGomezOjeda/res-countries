@@ -4,9 +4,6 @@ import { SectionSerch } from "../../components/SectionSerch/SectionSerch"
 
 
 export const PageHome = () => {
-
-
-
   return (
     <>
       <SectionSerch/>

@@ -27,9 +27,8 @@ export const ListCountries = () => {
    const handdleClickFigure = (currentCountry) => {
          const filterCountry = countriesData.find(country => country.name.common === currentCountry.name.common);
        setCountry(filterCountry)
-       console.log(filterCountry)
 
-       navigate(`/res-countries/${currentCountry.cca3}`)
+       navigate(`/res-countries/dist/${currentCountry.cca3}`)
 
    }
    

@@ -12,6 +12,7 @@ export async function countriesReducers(state = [], action){
       } catch (error) {
         return error;
       }
+      
     }
     if(action.type === "SERCH_ES"){
       try {

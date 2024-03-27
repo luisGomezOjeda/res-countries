@@ -19,7 +19,6 @@ export const SectionCountry = () => {
     const { code } = useParams();
     
     useEffect(() => {
-        console.log(country.cca3.trim());
         if(country.cca3 !== code ){
             const url = `https://restcountries.com/v3.1/alpha/${code}`;
             const getData = async (url) => {
@@ -67,7 +66,7 @@ export const SectionCountry = () => {
             <ul>
                 <b>Border Countries : </b> 
                 <div translate="no">
-                    { country.borders && country.borders.map((code, index) => <Link to={`/res-countries/${code}`} key={index}> {code} </Link> ) }
+                    { country.borders && country.borders.map((code, index) => <Link to={`/res-countries/dist/${code}`} key={index}> {code} </Link> ) }
                 </div>
             </ul>
         </StyledArticle>

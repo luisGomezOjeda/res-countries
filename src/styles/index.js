@@ -17,3 +17,4 @@ export const StyledMain = styled.main`
   background-color: ${() => AccessTheme() === "Ligth" ? variables.ligth_background
   : variables.dark_Background };
 `;
+

@@ -1,15 +1,21 @@
 import styled  from "styled-components"
 import { variables } from "../../styles/variables";
-import { styledElemet } from "../../styles/index";
+import { styledElemet, StyledMain } from "../../styles/index";
+import { AccessTheme } from "../../helpers/accessTheme";
+
+
 
 export const StyledHeader = styled.header`
     width: 100%;
-    height: 13vh;
+    height: 15vh;
     ${styledElemet}
     display: flex;
     justify-content: center;
     transition: 0.2s;
-     box-shadow: -3px -3px 5px #000;
+    box-shadow: -3px -3px 5px #000;
+    @media(max-width: 946PX){
+         height: 22vh;
+     }
     `;
 
 export const StyledContainer = styled.section`
@@ -89,4 +95,18 @@ export const Styledcon = styled.img`
     width: 20px;
     height:20px;
     object-fit: contain;
+`;
+
+
+export const StyleButtonInstall = styled.button`
+    color : ${ () => AccessTheme() === "Ligth" ? variables.dark_Background
+    : variables.ligth_Elements };
+    background-color: ${() => AccessTheme() === "Ligth" ?  "#dedede"
+    : variables.dark_Background };
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    cursor : pointer;
+    display: ${props => props.visibility === true ? "none" : "block"};
 `;

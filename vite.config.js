@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       manifest : {
+        start_url : "./res-countries/?utm_source=web_app_manifest",
         display : "standalone",
         display_override : ["window-controls-overlay"],
         lang : "es-ES",

@@ -44,7 +44,7 @@ export const Header = ({setButtonPrevPwa}) => {
   return (
     <StyledHeader>
         <StyledContainer>
-          <Link to="/res-countries/dist/">
+          <Link to="/res-countries/">
           <h1> Where in the world? </h1>
           </Link>
         

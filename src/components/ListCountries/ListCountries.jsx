@@ -28,7 +28,7 @@ export const ListCountries = () => {
          const filterCountry = countriesData.find(country => country.name.common === currentCountry.name.common);
        setCountry(filterCountry)
 
-       navigate(`/res-countries/dist/${currentCountry.cca3}`)
+       navigate(`/res-countries/${currentCountry.cca3}`)
 
    }
    

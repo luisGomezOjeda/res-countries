@@ -23,8 +23,9 @@ function App() {
                    <StyledMain>
                      <Header setButtonPrevPwa = {setButtonPrevPwa}/>
                      <Routes>
-                       <Route path = "/res-countries/dist/" element ={<PageHome/>}/>
-                       <Route path = "/res-countries/dist/:code" element ={<PageCountry buttonPrevPwa = { buttonPrevPwa }/>}/>
+                       <Route path = "*" element ={<PageHome/>}/>
+                       <Route path = "/res-countries/" element ={<PageHome/>}/>
+                       <Route path = "/res-countries/:code" element ={<PageCountry buttonPrevPwa = { buttonPrevPwa }/>}/>
                      </Routes>
                      <Footer/>
                    </StyledMain>

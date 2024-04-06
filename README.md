@@ -2,7 +2,7 @@
 
 Este proyecto es una aplicación web que utiliza la API de Restcountries.com para mostrar una lista de países y proporcionar datos detallados sobre cada país. Está construido utilizando React.js y Styled-Components para el diseño, y también hace uso de reducers y Context API para la gestión del estado de la aplicación.
 
-Puedes acceder al proyecto en línea en la siguiente URL: [res-countries](https://luisgomezojeda.github.io/res-countries/dist/)
+Puedes acceder al proyecto en línea en la siguiente URL: [res-countries](https://luisgomezojeda.github.io/res-countries/)
 
 ## Funcionalidades
 
